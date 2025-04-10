@@ -1,0 +1,202 @@
+body {
+    background-color: #e3eaf1;
+    font-family: 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.hero-bg-text {
+    top: 10%;
+    left: 5%;
+    font-size: 175px;
+    font-weight: 700;
+    color: #d1d9e0;
+    line-height: 1;
+    z-index: 0;
+    pointer-events: none;
+    position: absolute;
+}
+
+.row.position-relative {
+    z-index: 2;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #333;
+    text-transform: uppercase;
+}
+
+p {
+    line-height: 1.6;
+    font-size: 1.25rem;
+    color: #555;
+}
+
+.large-headphones {
+    width: 80%;
+    max-width: 500px;
+    margin: 0 auto;
+    display: block;
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+    z-index: 2;
+    border-radius: 15px;
+}
+
+.large-headphones:hover {
+    transform: scale(1.15);
+}
+
+.btn-primary {
+    background-color: transparent;
+    border: 2px solid #333;
+    color: rgb(44, 43, 43);
+    font-size: 1.1rem;
+    padding: 0.75rem 1.5rem;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: white;
+    border-color: white;
+    color: #0077b6;
+}
+
+.btn-outline-dark {
+    background-color: transparent;
+    border: 2px solid #333;
+    color: #333;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-outline-dark:hover {
+    background-color: #333;
+    border-color: #333;
+    color: white;
+}
+
+.key-features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-top: 4rem;
+    background-color: #f7f7f7;
+    padding: 3rem 0;
+    border-radius: 20px;
+}
+
+.key-features .feature-item {
+    background-color: #cbd7e2;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 2rem;
+    width: 30%;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.key-features .feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.key-features .feature-item img {
+    width: 70px;
+    height: 70px;
+    transition: transform 0.3s ease;
+}
+
+.key-features .feature-item img:hover {
+    transform: scale(1.2);
+}
+
+.key-features .feature-item h4 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-top: 1rem;
+    color: #333;
+}
+
+.key-features .feature-item p {
+    font-size: 1.1rem;
+    color: #777;
+    line-height: 1.6;
+    margin-top: 0.5rem;
+}
+
+footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #067dbe;
+}
+
+/* Back button positioned in the upper-left corner */
+.back-button-container {
+    position: absolute;
+    top: 30px;
+    /* Adjust as needed */
+    left: -60px;
+    /* Adjust as needed */
+    z-index: 10;
+}
+
+@media (max-width: 768px) {
+    .large-headphones {
+        max-width: 100%;
+        transform: none;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    p {
+        font-size: 1.15rem;
+    }
+
+    .key-features {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .key-features .feature-item {
+        width: 100%;
+    }
+}
+
+@media (min-width: 768px) {
+    .hero-bg-text {
+        font-size: 14rem;
+        top: 5%;
+    }
+
+    h2 {
+        font-size: 3.5rem;
+    }
+
+    p {
+        font-size: 1.3rem;
+    }
+}
