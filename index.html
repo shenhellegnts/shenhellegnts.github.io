@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ash's Portfolio</title>
+    <link rel="icon" href="img/icon.PNG">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">Ash</div>
+        <div class="hamburger" onclick="toggleNav()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <ul id="nav-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#insights">Insights</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1 style="font-size: 4.5rem; font-weight: bold; margin: 0;">Hi, I'm <span>Ash</span>!</h1>
+            <h3 class="sub-text" style="font-size: 2.2rem; font-weight: 600; margin: 0;">A Passionate IT Student
+                Exploring Web Development.</h3>
+            <a href="#contact" class="btn">Let’s Connect</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container about-container">
+            <img src="img/profile.jpg" alt="" class="about-img">
+            <div class="about-text">
+                <h2>About Me</h2>
+                <p>I never planned to enter the world of IT. In fact, my first choice was psychology, but fate had
+                    other plans. With no slots left, I found myself in technology instead—a path I never expected.
+                </p>
+                <p>At first, it felt like stepping into an unknown world, but then I discovered something
+                    surprising: I actually enjoy parts of it.</p>
+                <p>As an observer with a strong intuition, I naturally analyze problems, patterns, and even people.
+                    And while I may be quiet, my mind is constantly piecing things together.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2>My Projects</h2>
+            <div class="row">
+                <!-- Card 1: A04 -->
+                <div class="card custom-card">
+                    <div class="card-body">
+                        <h5 class="card-title">A04</h5>
+                        <p class="card-text">A product website showcasing the features of Zenpods Max.</p>
+                        <a href="https://shenhellegnts.github.io/A04/" class="btn custom-btn">View Project</a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card custom-card">
+                    <div class="card-body">
+                        <h5 class="card-title">A05</h5>
+                        <p class="card-text">Discover the beauty of Switzerland, featuring stunning landscapes, top
+                            destinations, and rich Swiss culture.</p>
+                        <a href="https://shenhellegnts.github.io/A05/" class="btn custom-btn">View Project</a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card custom-card">
+                    <div class="card-body">
+                        <h5 class="card-title">A06</h5>
+                        <p class="card-text">This is an ongoing project.</p>
+                        <a href="#" class="btn custom-btn">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="insights">
+        <div class="container">
+            <h2>Insights</h2>
+            <p>“Every problem is just a puzzle waiting to be solved.”</p>
+            <p>Like every explorer, I still have challenges to overcome. Some, I haven’t even discovered yet. But every
+                project, every issue I troubleshoot, brings me closer to mastering this world.</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <p>I’d love to connect! Whether it’s about web development or just tech talk, feel free to reach out.</p>
+            <div class="social-icons">
+                <a href="mailto:shenhelleashley@gmail.com" target="_blank">
+                    <i class="fa fa-envelope"></i>
+                </a>
+                <a href="https://github.com/shenhellegnts" target="_blank">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://instagram.com/shenhellegnzg" target="_blank">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Ash's Portfolio | All Rights Reserved</p>
+    </footer>
+
+    <script>
+        function toggleNav() {
+            const nav = document.querySelector('#nav-links');
+            nav.classList.toggle('open');
+        }
+    </script>
+
+</body>
+
+</html>
