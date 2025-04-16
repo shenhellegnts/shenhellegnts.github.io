@@ -1,0 +1,161 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    background-color: #f4f3eb;
+    color: #2e3b2f;
+}
+
+/* Fullscreen Section Styling */
+.fullscreen-section {
+    height: 100vh;
+    padding: 60px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .fullscreen-section {
+        height: auto;
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+}
+
+.home-section {
+    background: url('https://images.unsplash.com/photo-1701959345939-6cc64d0ca93d?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center/cover;
+}
+
+/* Button Styles */
+.btn-primary {
+    background-color: transparent;
+    border: 2px solid #333;
+    color: rgb(236, 236, 236);
+    margin-top: 20px;
+    margin-left: 20px;
+    font-size: 1.1rem;
+    padding: 0.75rem 1.5rem;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-outline-dark {
+    background-color: #333;
+    color: #e3e3e3;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    margin-top: 20px;
+    margin-left: 20px;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-outline-dark:hover {
+    background-color: white;
+    color: #333;
+    border-color: white;
+}
+
+.btn-outline-light {
+    border: 2px solid #fff;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-light:hover {
+    background-color: #fff;
+    color: #1c3d2e;
+}
+
+/* Background Sections */
+.destinations-section,
+#gallery {
+    background: linear-gradient(to bottom, #fffdfd, #7b7b7b);
+}
+
+#culture {
+    background-color: #2b2c2b;
+    color: #f4f3eb;
+}
+
+/* Card Text Coloring */
+#culture .card-title,
+#culture .card-text {
+    color: #2b2b2b;
+}
+
+/* Carousel */
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    max-height: 430px;
+    object-fit: cover;
+}
+
+/* Culture Cards */
+.culture-card img {
+    height: 250px;
+    object-fit: cover;
+}
+
+/* Gallery Cards */
+.gallery-card {
+    position: relative;
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Overlay Text for Gallery */
+.overlay-text {
+    position: absolute;
+    bottom: 10px;
+    left: 15px;
+    color: rgb(244, 244, 244);
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+    text-align: left;
+}
+
+/* Footer */
+footer {
+    background-color: #2b2c2b;
+    padding: 1.5rem 0;
+    color: #f7fcfa;
+}
+
+/* Headings: Embrace Swiss Culture & Gallery of Activities */
+#culture h2,
+#gallery h2 {
+    text-align: left;
+    margin-left: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+
+    #culture h2,
+    #gallery h2 {
+        margin-left: 5rem;
+    }
+}
+
+/* Responsive Media */
+img,
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+.container,
+.row,
+.card,
+.gallery-card {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
