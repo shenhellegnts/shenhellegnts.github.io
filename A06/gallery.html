@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gustav Klimt | Gallery</title>
+    <link rel="icon" href="img/icon.PNG">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .navbar {
+            background: rgba(255, 250, 240, 0.95);
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .navbar-nav .nav-link {
+            font-weight: bold;
+        }
+
+        .gallery-page {
+            background-color: #f9f3e6;
+            padding: 30px 0 0 0;
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .bento-grid {
+                grid-template-columns: repeat(2, 1fr);
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .bento-grid {
+                grid-template-columns: 1fr 1fr;
+                padding: 15px;
+            }
+        }
+
+        .bento-box {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            width: 100%;
+            height: 250px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .bento-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .bento-box .text {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .expanded-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 9;
+            display: none;
+        }
+
+        .bento-box.expanded {
+            height: auto;
+            width: auto;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            max-width: 80%;
+            max-height: 80%;
+        }
+
+        .bento-box.expanded img {
+            transform: scale(1.2);
+        }
+
+        .bento-box.expanded .text {
+            font-size: 18px;
+        }
+
+        .gallery-btn {
+            transition: all 0.3s ease;
+            border-radius: 20px;
+            padding: 12px 30px;
+            font-weight: bold;
+            background-color: #c59d5f;
+            color: white;
+            margin-top: 30px;
+            margin-bottom: 50px;
+        }
+
+        .gallery-btn:hover {
+            background-color: #5b4636;
+            color: #f9f3e6;
+        }
+
+        footer {
+            background: #f3e6d2;
+            padding: 20px 0;
+            margin-top: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Klimt</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link" href="index.html">Home</a>
+                    <a class="nav-link" href="index.html#artist">Artist</a>
+                    <a class="nav-link" href="index.html#works">Works</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="gallery-page d-flex align-items-center justify-content-center flex-column">
+        <h1 class="highlight mb-4 mt-5">Gustav Klimt's Gallery</h1>
+
+        <div id="expanded-overlay" class="expanded-overlay"></div>
+
+        <div id="gallery" class="bento-grid"></div>
+
+        <button class="gallery-btn" onclick="window.location.href='index.html'">Back to Home</button>
+    </section>
+
+    <footer class="text-center">
+        <p>© 2025 Gustav Klimt Gallery. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        const images = [
+            { src: "img/kiss.jpg", name: "The Kiss", date: "1908" },
+            { src: "img/adele.jpg", name: "Adele Bloch-Bauer II", date: "1912" },
+            { src: "img/judith.jpg", name: "Judith and the Head of Holofernes", date: "1901" },
+            { src: "img/tree.jpg", name: "The Tree of Life", date: "1909" },
+            { src: "img/hope.jpg", name: "Hope II", date: "1907" },
+            { src: "img/virgin.jpg", name: "The Virgin", date: "1913" },
+            { src: "img/emilie.jpg", name: "Portrait of Emilie Flöge", date: "1902" },
+            { src: "img/danae.jpg", name: "Danae", date: "1907" },
+            { src: "img/water.jpg", name: "Water Serpents II", date: "1907" },
+            { src: "img/beech.jpg", name: "Beech Grove I", date: "1902" },
+            { src: "img/woman.jpg", name: "The Three Ages of Woman", date: "1905" },
+            { src: "img/lady.jpeg", name: "Lady with Fan", date: "1917" },
+            { src: "img/pallas.jpeg", name: "Pallas Athene", date: "1898" },
+            { src: "img/farm.jpg", name: "Farm Garden with Sunflowers", date: "1906" },
+            { src: "img/maria.jpg", name: "Portrait of Friederike Maria Beer", date: "1916" },
+            { src: "img/johanna.jpg", name: "Portrait of Johanna Staude", date: "1918" },
+            { src: "img/marga.jpg", name: "Portrait of Margeret Stonborough Wittgenstein", date: "1905" },
+            { src: "img/forest.jpg", name: "Forest of Beech Trees", date: "1903" },
+            { src: "img/avenue.jpg", name: "Avenue in the Park of Schloss Kammer", date: "1912" },
+            { src: "img/church.jpg", name: "Church in Cassone, Landscape with Cypresses", date: "1913" },
+            { src: "img/fritza.jpg", name: "Portrait of Fritza Riedler", date: "1906" }
+        ];
+
+        const gallery = document.getElementById('gallery');
+        const overlay = document.getElementById('expanded-overlay');
+
+        images.forEach(item => {
+            const box = document.createElement('div');
+            box.className = 'bento-box';
+            box.innerHTML = `
+        <img src="${item.src}" alt="${item.name}">
+        <div class="text">
+          <h5>${item.name}</h5>
+          <p>${item.date}</p>
+        </div>
+      `;
+            box.addEventListener('click', (e) => {
+                e.stopPropagation();
+                document.querySelectorAll('.bento-box.expanded').forEach(box => {
+                    box.classList.remove('expanded');
+                });
+                box.classList.add('expanded');
+                overlay.style.display = 'block';
+            });
+            gallery.appendChild(box);
+        });
+
+        overlay.addEventListener('click', () => {
+            document.querySelectorAll('.bento-box.expanded').forEach(box => {
+                box.classList.remove('expanded');
+            });
+            overlay.style.display = 'none';
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.bento-box')) {
+                document.querySelectorAll('.bento-box.expanded').forEach(box => {
+                    box.classList.remove('expanded');
+                });
+                overlay.style.display = 'none';
+            }
+        });
+    </script>
+
+</body>
+
+</html>
