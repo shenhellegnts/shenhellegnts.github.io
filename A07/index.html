@@ -16,13 +16,6 @@
             overflow-x: hidden;
         }
 
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
-        }
-
         .logo-img {
             height: 140px;
             margin-top: 20px;
@@ -36,25 +29,18 @@
             margin-top: 30px;
         }
 
-        .character-row {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-            margin-top: 5rem;
-        }
-
         .card-box {
             background: #f0f0f0;
             border-radius: 20px;
             padding: 1.5rem;
-            width: 380px;
+            width: 100%;
+            max-width: 380px;
             text-align: center;
             position: relative;
             cursor: pointer;
             transition: transform 0.3s;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-            margin-top: 80px;
+            margin: 2rem auto 0;
         }
 
         .card-box:hover {
@@ -87,7 +73,6 @@
         .nav-btns {
             margin-top: 30px;
             text-align: right;
-            margin-right: 60px;
         }
 
         .nav-btns button {
@@ -126,7 +111,6 @@
             padding: 2rem;
             border-radius: 20px;
             text-align: center;
-            position: relative;
         }
 
         .overlay .char-desc {
@@ -154,18 +138,26 @@
 
 <body class="p-4">
     <div class="container">
-        <div class="header">
-            <img src="img/DBlogo.png" alt="" class="logo-img">
-            <div class="search-bar">
-                <input type="text" id="searchInput" placeholder="Search characters...">
+        <div class="row mb-4">
+            <div class="col-md-6 d-flex justify-content-start">
+                <img src="img/DBlogo.png" alt="" class="logo-img">
+            </div>
+            <div class="col-md-6 d-flex justify-content-end align-items-start">
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Search characters...">
+                </div>
             </div>
         </div>
-        <div class="character-row" id="characterRow"></div>
-        <div class="nav-btns">
-            <button id="prevBtn" onmouseover="this.style.background='#888'; this.style.color='white';"
-                onmouseout="this.style.background='#f0f0f0'; this.style.color='rgb(47, 45, 45)'">← Prev</button>
-            <button id="nextBtn" onmouseover="this.style.background='#888'; this.style.color='white';"
-                onmouseout="this.style.background='#f0f0f0'; this.style.color='rgb(47, 45, 45)'">Next →</button>
+
+        <div class="row" id="characterRow"></div>
+
+        <div class="row mt-3">
+            <div class="col-12 text-end">
+                <div class="nav-btns">
+                    <button id="prevBtn">← Prev</button>
+                    <button id="nextBtn">Next →</button>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -212,16 +204,17 @@
             const visible = allCharacters.slice(index, index + 3);
             visible.forEach(char => {
                 const color = getColor(char.name);
-                const card = document.createElement('div');
-                card.className = 'card-box';
-                card.onclick = () => showOverlay(char);
-                card.innerHTML = `
-          <div class="circle" style="background: ${getGradient(color)};">
-            <img src="${char.image}" alt="${char.name}">
+                const col = document.createElement('div');
+                col.className = 'col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center';
+                col.innerHTML = `
+          <div class="card-box" onclick='showOverlay(${JSON.stringify(char).replace(/"/g, "&quot;")})'>
+            <div class="circle" style="background: ${getGradient(color)};">
+              <img src="${char.image}" alt="${char.name}">
+            </div>
+            <div class="char-name" style="color: ${color};">${char.name}</div>
           </div>
-          <div class="char-name" style="color: ${color};">${char.name}</div>
         `;
-                characterRow.appendChild(card);
+                characterRow.appendChild(col);
             });
         }
 
