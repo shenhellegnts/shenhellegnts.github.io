@@ -1,4 +1,4 @@
-@import url(file:///C:/Users/Shenhelle%20Ashley/OneDrive/Guantes,%20Shenhelle%20Ashley/index.html);
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 body {
     margin: 0;
@@ -18,17 +18,6 @@ body {
     padding: 0 5%;
 }
 
-.section {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.5s ease-out;
-}
-
-.section.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
 nav {
     display: flex;
     justify-content: space-between;
@@ -42,14 +31,12 @@ nav {
     z-index: 1000;
     height: 60px;
     width: 100%;
-    transition: background-color 0.3s ease;
 }
 
 nav .logo {
     font-size: 30px;
     font-weight: bold;
     color: #e91e63;
-    transition: color 0.3s ease;
 }
 
 nav ul {
@@ -80,7 +67,7 @@ nav ul li a:hover {
     cursor: pointer;
 }
 
-.hamburger span {
+.hamburger .line {
     height: 3px;
     width: 25px;
     background: #fff;
@@ -95,22 +82,23 @@ nav ul li a:hover {
 
 .btn {
     display: inline-block;
-    padding: 12px 24px;
-    font-size: 18px;
+    padding: 10px 20px;
+    font-size: 16px;
     font-weight: bold;
     color: #fff;
     background-color: #e91e63;
     border: none;
-    border-radius: 30px;
+    border-radius: 25px;
     text-decoration: none;
     transition: all 0.3s ease;
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
 .btn:hover {
     background-color: #d81b60;
     transform: scale(1.05);
 }
+
 
 #hero {
     display: flex;
@@ -183,7 +171,6 @@ nav ul li a:hover {
 .about-text {
     flex: 1;
     color: #fff;
-    margin-left: 0;
     text-align: left;
 }
 
@@ -198,6 +185,19 @@ nav ul li a:hover {
     line-height: 1.6;
 }
 
+#projects {
+    padding: 100px 5%;
+}
+
+#projects h2 {
+    text-align: left;
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 3rem;
+    margin-left: 1rem;
+}
+
 .custom-card {
     border: 2px solid #e91e63;
     border-radius: 15px;
@@ -206,13 +206,8 @@ nav ul li a:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 350px;
-    width: 100%;
-    max-width: 300px;
-    margin-right: 20px;
+    height: 100%;
+    margin-bottom: 20px;
 }
 
 .custom-card:hover {
@@ -220,53 +215,48 @@ nav ul li a:hover {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
+.custom-card .card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #e91e63;
+}
+
+.custom-card .card-text {
+    font-size: 1rem;
+    color: #ccc;
+}
+
 .custom-btn {
     background-color: #e91e63;
     color: #fff;
     border: none;
-    padding: 10px 20px;
+    padding: 8px 16px;
     border-radius: 5px;
-    font-weight: 600;
+    font-weight: 500;
     transition: background-color 0.3s ease;
-    margin-top: 20px;
+    margin-top: 15px;
+    display: inline-block;
 }
 
 .custom-btn:hover {
     background-color: #d81b60;
 }
 
-#projects h2 {
-    text-align: left;
-    font-size: 3rem;
-    font-weight: bold;
-    color: white;
-    margin-bottom: 3rem;
-    margin-left: 2rem;
-}
-
-.card-title {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #e91e63;
-}
-
-.card-text {
-    font-size: 1rem;
-    color: #ccc;
-}
-
-#projects {
+#insights {
+    padding: 100px 5%;
     text-align: center;
-    padding: 120px 5%;
 }
 
-#projects .row {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    justify-items: center;
-    align-items: stretch;
-    padding: 0 1rem;
+#insights h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+#insights p {
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 20px auto;
 }
 
 #contact {
@@ -316,47 +306,17 @@ footer p {
 }
 
 @media (max-width: 995px) {
-    .hero-text h1 {
-        font-size: 40px;
-    }
-
-    .profile-img {
-        max-width: 250px;
-        margin-top: 20px;
-    }
-
-    .about-text h2 {
-        font-size: 35px;
-    }
-
-    .about-text p {
-        font-size: 18px;
-    }
-
-    #contact h2 {
-        font-size: 35px;
-    }
-
-    #contact p {
-        font-size: 18px;
-    }
-
-    footer {
-        font-size: 12px;
-        padding: 10px;
-    }
-
     .nav-links {
         display: none;
+        flex-direction: column;
         position: absolute;
         top: 60px;
         right: 0;
-        background: #1c1c1c;
         width: 100%;
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
+        background: #1c1c1c;
+        text-align: center;
         padding: 20px 0;
+        gap: 15px;
     }
 
     .nav-links.active {
