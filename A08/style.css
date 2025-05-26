@@ -33,7 +33,7 @@ h2 {
 
 .fullscreen-image {
 	min-height: 60vh;
-	background-image: url('https://static.wikia.nocookie.net/tokyo-revengers/images/d/dd/Tokyo_Manji_Gang.png/revision/latest?cb=20211203213133');
+	background-image: url('img/flag.png');
 	background-size: contain;
 	background-position: center;
 	background-repeat: no-repeat;
